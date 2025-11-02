@@ -46,11 +46,20 @@
         <h2 class="section-title">Sobre Mim</h2>
         <div class="about-content">
             <div class="profile-container">
-                <!-- Imagem de perfil com fallback -->
-                <div class="profile-img">
-                    <div class="profile-placeholder">
-                        <img src="img/perfil.png" alt="Foto de perfil" class="profile-img" onerror="replaceWithFallback(this)">
+                <div class="profile-wrapper">
+                    <!-- Imagem de perfil com fallback aprimorado -->
+                    <img 
+                        src="img/perfil.png" 
+                        alt="Ndombaxi Mantuidi - Desenvolvedor Web" 
+                        class="profile-img"
+                        onerror="this.onerror=null; this.style.display='none'; document.getElementById('profile-fallback').style.display='flex';"
+                    >
+                    <div id="profile-fallback" class="profile-placeholder" style="display: none;">
+                        <i class="fas fa-user placeholder-icon"></i>
+                        <span class="placeholder-text">Ndombaxi Mantuidi<br>Desenvolvedor Web</span>
                     </div>
+                    <div class="profile-frame"></div>
+                    <div class="profile-status" title="Disponível para projetos"></div>
                 </div>
             </div>
             <div class="about-text">

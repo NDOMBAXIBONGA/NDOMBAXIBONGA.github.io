@@ -183,9 +183,32 @@
             });
         });
 
-        function replaceWithFallback(img) {
-    const fallback = document.createElement('div');
-    fallback.className = 'profile-fallback';
-    fallback.innerHTML = '<i class="fas fa-user"></i>';
-    img.parentNode.replaceChild(fallback, img);
-}
+        // Script para melhor tratamento da imagem de perfil
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileImg = document.querySelector('.profile-img');
+            const profileFallback = document.getElementById('profile-fallback');
+            
+            // Verifica se a imagem carregou corretamente
+            if (profileImg.complete && profileImg.naturalHeight === 0) {
+                profileImg.style.display = 'none';
+                profileFallback.style.display = 'flex';
+            }
+            
+            // Adiciona efeito de loading
+            profileImg.addEventListener('load', function() {
+                this.style.opacity = '0';
+                setTimeout(() => {
+                    this.style.transition = 'opacity 0.5s ease';
+                    this.style.opacity = '1';
+                }, 100);
+            });
+            
+            // Efeito de hover no status
+            const statusIndicator = document.querySelector('.profile-status');
+            statusIndicator.addEventListener('click', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'pulse 2s infinite';
+                }, 10);
+            });
+        });

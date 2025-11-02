@@ -308,7 +308,7 @@
             background: linear-gradient(to right, transparent, var(--gold), transparent);
         }
 
-        /* Sobre */
+       /* Seção Sobre */
         #sobre {
             background: var(--black-light);
             border-radius: 15px;
@@ -316,6 +316,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             position: relative;
             overflow: hidden;
+            padding: 6rem 2rem;
+            max-width: 1200px;
         }
 
         #sobre::before {
@@ -328,6 +330,27 @@
             background: linear-gradient(to right, var(--gold), var(--gold-light));
         }
 
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+            color: var(--white);
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -338,6 +361,32 @@
         .profile-container {
             display: flex;
             justify-content: center;
+            position: relative;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 4px solid var(--gold);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 25px rgba(212, 175, 55, 0.4),
+                inset 0 0 25px rgba(212, 175, 55, 0.2);
+            animation: pulse 3s ease-in-out infinite;
+            z-index: 2;
+            pointer-events: none;
         }
 
         .profile-img {
@@ -345,32 +394,101 @@
             height: 250px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--gold);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-            animation: float 5s ease-in-out infinite;
             position: relative;
             z-index: 1;
+            transition: all 0.5s ease;
+            animation: float 5s ease-in-out infinite;
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, var(--black-light), var(--black)) padding-box,
+                        linear-gradient(45deg, var(--gold), var(--gold-light)) border-box;
         }
 
-        .profile-avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
+        .profile-img:hover {
+            transform: scale(1.05);
+            animation-play-state: paused;
         }
 
         .profile-placeholder {
             width: 250px;
             height: 250px;
             border-radius: 50%;
-            background: var(--black);
+            background: linear-gradient(135deg, var(--black-light), var(--black));
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: var(--gold);
-            border: 5px solid var(--gold);
-            font-size: 1.2rem;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            border: 3px solid var(--gold);
+            font-size: 1rem;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            animation: float 5s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(212, 175, 55, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        .placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .placeholder-text {
+            font-size: 0.9rem;
+            text-align: center;
+            max-width: 80%;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .profile-status {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            border: 3px solid var(--black-light);
+            border-radius: 50%;
+            z-index: 3;
+            animation: pulse 2s infinite;
+        }
+
+        .profile-status::after {
+            content: 'Online';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .profile-status:hover::after {
+            opacity: 1;
         }
 
         .about-text p {
@@ -379,6 +497,71 @@
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.8);
         }
+
+        .about-text p:first-child {
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .profile-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+
+            .profile-img, .profile-placeholder {
+                width: 220px;
+                height: 220px;
+            }
+
+            .profile-status {
+                bottom: 15px;
+                right: 15px;
+                width: 16px;
+                height: 16px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #sobre {
+                padding: 4rem 1.5rem;
+            }
+
+            .profile-wrapper {
+                width: 220px;
+                height: 220px;
+            }
+
+            .profile-img, .profile-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+
+            .placeholder-icon {
+                font-size: 2.5rem;
+            }
+
+            .placeholder-text {
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
 
         /* Projetos */
         #projetos {
