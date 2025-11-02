@@ -170,7 +170,7 @@
             color: var(--gold);
             font-weight: bold;
             font-size: 1.2rem;
-            display: none; /* Escondido no desktop */
+            display: block; /* VISÍVEL EM TODOS OS FORMATOS */
         }
 
         .nav-menu {
@@ -842,10 +842,6 @@
             /* Navbar Mobile - CORREÇÕES APLICADAS */
             .nav-container {
                 padding: 0 1.5rem;
-            }
-
-            .nav-logo {
-                display: block; /* Mostra o logo no mobile */
             }
 
             .hamburger {
