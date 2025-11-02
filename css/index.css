@@ -167,7 +167,7 @@
             right: 10%;
         }
 
-        /* NAVBAR IGUAL AO PROJETOS.HTML */
+        /* NAVBAR COM LOGO PARA TODOS OS FORMATOS */
         nav {
             background: rgba(18, 18, 18, 0.95);
             padding: 1rem 0;
@@ -192,7 +192,7 @@
             color: var(--gold);
             font-weight: bold;
             font-size: 1.2rem;
-            display: none; /* Escondido no desktop */
+            display: block; /* VISÍVEL EM TODOS OS FORMATOS */
         }
 
         .nav-menu {
@@ -200,7 +200,6 @@
             display: flex;
             gap: 3rem;
             transition: all 0.3s ease;
-            margin: 0 auto; /* Centralizado igual ao projetos.html */
         }
 
         .nav-menu li {
@@ -854,10 +853,6 @@
             /* Navbar Mobile */
             .nav-container {
                 padding: 0 1.5rem;
-            }
-
-            .nav-logo {
-                display: block; /* Mostra o logo no mobile */
             }
 
             .hamburger {
