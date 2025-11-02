@@ -48,6 +48,7 @@
             });
         });
 
+        // Restante do código JavaScript...
         // Animação para as barras de habilidade
         window.addEventListener('load', () => {
             const skillBars = document.querySelectorAll('.skill-level');

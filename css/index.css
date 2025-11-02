@@ -1,4 +1,4 @@
-        /* Reset e configurações básicas */
+/* Reset e configurações básicas */
         * {
             margin: 0;
             padding: 0;
@@ -167,7 +167,7 @@
             right: 10%;
         }
 
-        /* NAVBAR MELHORADA PARA MOBILE */
+        /* NAVBAR IGUAL AO PROJETOS.HTML */
         nav {
             background: rgba(18, 18, 18, 0.95);
             padding: 1rem 0;
@@ -189,10 +189,10 @@
         }
 
         .nav-logo {
-            display: none;
             color: var(--gold);
             font-weight: bold;
             font-size: 1.2rem;
+            display: none; /* Escondido no desktop */
         }
 
         .nav-menu {
@@ -200,6 +200,7 @@
             display: flex;
             gap: 3rem;
             transition: all 0.3s ease;
+            margin: 0 auto; /* Centralizado igual ao projetos.html */
         }
 
         .nav-menu li {
@@ -237,7 +238,7 @@
 
         /* Menu Hamburger para Mobile */
         .hamburger {
-            display: none;
+            display: none; /* Escondido no desktop */
             flex-direction: column;
             cursor: pointer;
             padding: 5px;
@@ -246,6 +247,7 @@
             width: 30px;
             height: 25px;
             position: relative;
+            z-index: 1001;
         }
 
         .hamburger span {
@@ -855,11 +857,11 @@
             }
 
             .nav-logo {
-                display: block;
+                display: block; /* Mostra o logo no mobile */
             }
 
             .hamburger {
-                display: flex;
+                display: flex; /* Mostra o hamburger no mobile */
             }
 
             .nav-menu {
