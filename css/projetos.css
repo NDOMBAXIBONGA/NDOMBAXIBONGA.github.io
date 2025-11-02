@@ -145,7 +145,7 @@
             right: 10%;
         }
 
-        /* NAVBAR MELHORADA PARA MOBILE */
+        /* NAVBAR CORRIGIDA PARA MOBILE */
         nav {
             background: rgba(18, 18, 18, 0.95);
             padding: 1rem 0;
@@ -170,6 +170,7 @@
             color: var(--gold);
             font-weight: bold;
             font-size: 1.2rem;
+            display: none; /* Escondido no desktop */
         }
 
         .nav-menu {
@@ -212,9 +213,9 @@
             width: 100%;
         }
 
-        /* Menu Hamburger para Mobile */
+        /* Menu Hamburger para Mobile - CORRIGIDO */
         .hamburger {
-            display: none;
+            display: none; /* Escondido no desktop */
             flex-direction: column;
             cursor: pointer;
             padding: 5px;
@@ -223,6 +224,7 @@
             width: 30px;
             height: 25px;
             position: relative;
+            z-index: 1001;
         }
 
         .hamburger span {
@@ -835,19 +837,19 @@
             animation: float 10s infinite linear;
         }
 
-        /* RESPONSIVIDADE MELHORADA */
+        /* RESPONSIVIDADE CORRIGIDA */
         @media (max-width: 768px) {
-            /* Navbar Mobile */
+            /* Navbar Mobile - CORREÇÕES APLICADAS */
             .nav-container {
                 padding: 0 1.5rem;
             }
 
             .nav-logo {
-                display: block;
+                display: block; /* Mostra o logo no mobile */
             }
 
             .hamburger {
-                display: flex;
+                display: flex; /* Mostra o hamburger no mobile */
             }
 
             .nav-menu {

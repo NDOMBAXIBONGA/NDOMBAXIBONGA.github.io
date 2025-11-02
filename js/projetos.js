@@ -1,4 +1,4 @@
-// NAVBAR MOBILE - FUNCIONALIDADE MELHORADA
+// NAVBAR MOBILE - CÓDIGO CORRIGIDO
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
 
@@ -27,7 +27,10 @@
 
         // Fechar menu ao clicar fora
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-container') && navMenu.classList.contains('active')) {
+            const isClickInsideNav = e.target.closest('.nav-container');
+            const isClickOnHamburger = e.target.closest('.hamburger');
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
                 toggleMenu();
             }
         });
@@ -35,20 +38,23 @@
         // Smooth scroll para navegação
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId.startsWith('#')) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                } else {
-                    window.location.href = targetId;
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
+                // Links externos (como index.html) não precisam de preventDefault
             });
         });
 
+        // Restante do código JavaScript permanece o mesmo...
         // Funções do carrossel
         function showSlide(carouselId, index) {
             const carousel = document.getElementById(carouselId);
