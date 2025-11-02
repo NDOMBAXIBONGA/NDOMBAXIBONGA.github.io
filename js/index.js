@@ -182,3 +182,10 @@
                 observer.observe(el);
             });
         });
+
+        function replaceWithFallback(img) {
+    const fallback = document.createElement('div');
+    fallback.className = 'profile-fallback';
+    fallback.innerHTML = '<i class="fas fa-user"></i>';
+    img.parentNode.replaceChild(fallback, img);
+}
