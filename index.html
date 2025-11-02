@@ -49,7 +49,12 @@
                 <!-- Imagem de perfil com fallback -->
                 <div class="profile-img">
                     <div class="profile-placeholder">
-                        <img src="img/perfil.png" alt="Foto de perfil" class="profile-avatar" onerror="this.style.display='none'">
+                        <img 
+                        src="img/perfil.png" 
+                        alt="Ndombaxi Mantuidi - Desenvolvedor Web" 
+                        class="profile-img"
+                        onerror="this.onerror=null; this.style.display='none'; document.getElementById('profile-fallback').style.display='flex';"
+                    >
                     </div>
                 </div>
             </div>
