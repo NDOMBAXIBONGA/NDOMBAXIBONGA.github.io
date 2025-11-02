@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndombaxi Mantuidi - Portfólio Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    
+</head>
+<body>
+    <!-- Partículas de fundo -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="gold-decoration decoration-1"></div>
+        <div class="gold-decoration decoration-2"></div>
+        <div class="header-content">
+            <h1>Ndombaxi Mantuidi de Almeida Bonga</h1>
+            <p>Desenvolvedor Web | Python/Django | Desenvolvedor Júnior</p>
+            <a href="#sobre" class="header-cta">Conheça Meu Trabalho</a>
+        </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="about-content">
+            <div class="profile-container">
+                <!-- Imagem de perfil com fallback -->
+                <div class="profile-img">
+                    <img src="{% static 'img/perfil/perfil.png' %}" alt="Foto de perfil" class="profile-avatar" onerror=>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>Olá! Eu sou Ndombaxi Mantuidi, um desenvolvedor web apaixonado por criar soluções incríveis. Com experiência em desenvolvimento Python/Django, especializo-me em criar aplicações web funcionais e responsivas.</p>
+                <p>Meu objetivo é crescer como desenvolvedor e contribuir para projetos inovadores. Acredito que a tecnologia pode transformar vidas e resolver problemas complexos.</p>
+                <p>Quando não estou programando, gosto de aprender novas tecnologias, ler e explorar novas ferramentas de desenvolvimento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos">
+        <h2 class="section-title">Meus Projetos</h2>
+        <div class="projects-grid">
+            <!-- Projeto 1 -->
+            <div class="project-card">
+                <div class="project-image-container">
+                    <div class="project-carousel" id="carousel-1">
+                        <div class="carousel-slide active">
+                            <div>🏠 Página Inicial</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div>📊 Dashboard</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div>👥 Gestão de Usuários</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div>📈 Relatórios</div>
+                        </div>
+                        <button class="carousel-arrow prev" onclick="prevSlide('carousel-1')">❮</button>
+                        <button class="carousel-arrow next" onclick="nextSlide('carousel-1')">❯</button>
+                        <div class="carousel-nav">
+                            <span class="carousel-dot active" onclick="goToSlide('carousel-1', 0)"></span>
+                            <span class="carousel-dot" onclick="goToSlide('carousel-1', 1)"></span>
+                            <span class="carousel-dot" onclick="goToSlide('carousel-1', 2)"></span>
+                            <span class="carousel-dot" onclick="goToSlide('carousel-1', 3)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Sistema de Gestão</h3>
+                    <p>Sistema desenvolvido em Django para gestão de tarefas e projetos com interface moderna e responsiva.</p>
+                    <a href="#" class="project-button">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Projeto 2 -->
+            <div class="project-card">
+                <div class="project-image-container">
+                    <div class="project-carousel" id="carousel-2">
+                        <div class="carousel-slide active">
+                            <div>🛍️ Catálogo</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div>🛒 Carrinho</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div>💳 Checkout</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div>📱 Mobile</div>
+                        </div>
+                        <button class="carousel-arrow prev" onclick="prevSlide('carousel-2')">❮</button>
+                        <button class="carousel-arrow next" onclick="nextSlide('carousel-2')">❯</button>
+                        <div class="carousel-nav">
+                            <span class="carousel-dot active" onclick="goToSlide('carousel-2', 0)"></span>
+                            <span class="carousel-dot" onclick="goToSlide('carousel-2', 1)"></span>
+                            <span class="carousel-dot" onclick="goToSlide('carousel-2', 2)"></span>
+                            <span class="carousel-dot" onclick="goToSlide('carousel-2', 3)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce</h3>
+                    <p>Loja virtual completa com carrinho de compras, sistema de pagamento e painel administrativo.</p>
+                    <a href="#" class="project-button">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Projeto 3 -->
+            <div class="project-card">
+                <div class="project-image-container">
+                    <div class="project-carousel" id="carousel-3">
+                        <div class="carousel-slide active">
+                            <div>📝 Lista de Posts</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div>📄 Post Detalhado</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div>💬 Comentários</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div>👤 Perfil</div>
+                        </div>
+                        <button class="carousel-arrow prev" onclick="prevSlide('carousel-3')">❮</button>
+                        <button class="carousel-arrow next" onclick="nextSlide('carousel-3')">❯</button>
+                        <div class="carousel-nav">
+                            <span class="carousel-dot active" onclick="goToSlide('carousel-3', 0)"></span>
+                            <span class="carousel-dot" onclick="goToSlide('carousel-3', 1)"></span>
+                            <span class="carousel-dot" onclick="goToSlide('carousel-3', 2)"></span>
+                            <span class="carousel-dot" onclick="goToSlide('carousel-3', 3)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Blog Pessoal</h3>
+                    <p>Blog desenvolvido com Django incluindo sistema de comentários, categorias e tags.</p>
+                    <a href="#" class="project-button">Ver Detalhes</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão para página de projetos -->
+        <div class="projects-cta">
+            <a href="{% url "meus_projetos" %}" class="cta-button">Ver Todos os Projetos</a>
+        </div>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Técnicas</h3>
+                <div class="skill-item">
+                    <span>Python</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Django</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>JavaScript</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 15%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>HTML/CSS</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 45%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Ferramentas</h3>
+                <div class="skill-item">
+                    <span>Git</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 35%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>VS Code</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Pycharme Para Python Puro</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>IA Para Melhor Produtividade</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 55%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato - CORRIGIDA COM WHATSAPP -->
+    <section id="contato">
+        <div class="contact-container">
+            <div class="contact-title-container">
+                <h2 class="contact-title">Vamos Trabalhar Juntos?</h2>
+                <p class="contact-subtitle">Estou disponível para novos projetos e oportunidades. Entre em contato comigo através dos canais abaixo:</p>
+            </div>
+            
+            <div class="contact-links">
+                <a href="mailto:ndombaxibonga@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <span class="contact-text">E-mail</span>
+                    <span class="contact-description">Resposta em até 24h</span>
+                </a>
+                <a href="https://wa.me/244932400204" class="contact-link">
+                    <i class="fab fa-whatsapp contact-icon"></i>
+                    <span class="contact-text">WhatsApp</span>
+                    <span class="contact-description">Resposta rápida</span>
+                </a>
+                <a href="https://www.linkedin.com/in/ndombaxi-mantuidi-de-almeida-bonga-635158335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="contact-link">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                    <span class="contact-text">LinkedIn</span>
+                    <span class="contact-description">Conecte-se profissionalmente</span>
+                </a>
+                <a href="https://github.com/NDOMBAXIBONGA" class="contact-link">
+                    <i class="fab fa-github contact-icon"></i>
+                    <span class="contact-text">GitHub</span>
+                    <span class="contact-description">Veja meus projetos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 N.M.A.B Todos os direitos reservados.</p>
+    </footer>
+
+    <script>src="js/index.js"</script>
+</body>
+</html>
