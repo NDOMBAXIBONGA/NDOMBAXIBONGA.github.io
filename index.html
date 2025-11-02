@@ -23,15 +23,21 @@
         </div>
     </header>
 
-    <!-- Navegação -->
+    <!-- Navegação Melhorada -->
     <nav>
         <div class="nav-container">
-            <ul>
+            <div class="nav-logo">N.M.A.B</div>
+            <ul class="nav-menu">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -42,7 +48,9 @@
             <div class="profile-container">
                 <!-- Imagem de perfil com fallback -->
                 <div class="profile-img">
-                    <img src="img/perfil.png" alt="Foto de perfil" class="profile-avatar" onerror=>
+                    <div class="profile-placeholder">
+                        <i class="fas fa-user" style="font-size: 4rem;"></i>
+                    </div>
                 </div>
             </div>
             <div class="about-text">
@@ -260,7 +268,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 N.M.A.B Todos os direitos reservados.</p>
+        <p>&copy; 2025 N.M.A.B Todos os direitos reservados.</p>
     </footer>
 
     <script src="js/index.js"></script>
