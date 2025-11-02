@@ -1,4 +1,38 @@
-// Smooth scroll para navegação
+// NAVBAR MOBILE - FUNCIONALIDADE MELHORADA
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Previne scroll quando menu está aberto
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container') && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Smooth scroll para navegação
         document.querySelectorAll('nav a, .header-cta').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 if (this.getAttribute('href').startsWith('#')) {
